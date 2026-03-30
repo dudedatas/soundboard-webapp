@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- title is the name that appears in browser tab -->
+    <title>SoundboardMiguel</title> 
+    <link rel="manifest" href="manifest.json">
+</head>
+
+<body style="
+    background-image: url('images/soundboardmiguel.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    ">
+    <!-- this title is the one that starts the body-->
+    <h1 style="text-align: center;">SoundboardMiguel</h1>
+
+    <!-- when button is pressed, playSound() is called -->
+    <button style="background-color: orange; font-size: 20px;", onclick="stopSound()">STOP</button>
+    <button style="background-color: green; font-size: 20px;", onclick="playSound('soundclips/stay_fly.wav')"> Fly </button>
+    <button style="background-color: rgb(132, 227, 132); font-size: 20px;", onclick="playSound('soundclips/tell_me_why.wav')"> WhyGroove </button>
+    <button style="background-color: red; font-size: 20px;", onclick="playSound('soundclips/mk_finish.wav')"> FinishHim </button>
+    <button style="background-color: blue; font-size: 20px;", onclick="playSound('soundclips/what_the_hell.wav')"> W.T.H. </button>
+    <button style="background-color: rosybrown; font-size: 20px;", onclick="playSound('soundclips/fahh.wav')"> Fahh </button>
+    <button style="background-color: yellow; font-size: 20px;", onclick="playSound('soundclips/price_is_right.wav')"> Loser </button>
+
+    <!-- defines the behavior -->
+    <script>
+        // stores the currently playing sound
+        let currentAudio = null;
+
+
+        function playSound(file) {
+            //stops previous sound & resets it
+            if (currentAudio !== null) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+            }
+            // creates an audio object from file and plays it
+            currentAudio = new Audio(file);
+            currentAudio.play();
+        }
+        function stopSound() {
+            if (currentAudio !== null) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+            }
+        }
+    
+    </script>
+
+
+
+</body>
+</html>
